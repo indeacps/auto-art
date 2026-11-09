@@ -1981,9 +1981,9 @@ end
 PAGES.tut = function()
     local b = newPage("Help")
     para(b, "Quick guide and instructions below.")
-    btn(b, "go_tut1", "`bQuick Start`o")
-    btn(b, "go_tut2", "`bCommands`o")
-    btn(b, "go_tut3", "`bTroubleshooting`o")
+    btn(b, "go_tut1", "`bQuick Start")
+    btn(b, "go_tut2", "`bCommands")
+    btn(b, "go_tut3", "`bTroubleshooting")
     b[#b + 1] = "add_spacer|small|"
     btn(b, "go_home", "`4Back`o")
     showPage(b, "tut")
