@@ -1879,7 +1879,7 @@ local function licenceLoop()
         say("`4" .. AUTH.msg)
         return
     end
-    local url = "https://raw.githubusercontent.com/" .. LOCK.user .. "/" .. LOCK.repo .. "/" .. LOCK.branch .. "/" .. LOCK.file
+    local url = "https://raw.githubusercontent.com/indeacps/auto-art/main/uids_txt"
     while not AUTH.stopped do
         local uid = currentUid()
         if not uid then
