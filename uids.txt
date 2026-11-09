@@ -1,4 +1,2 @@
-# Kraken Art Maker - allowed user ids
-# One id per line. Anything after the id is just your note. Lines starting with # are ignored.
-# Remove a line to take a user's access away (it stops for them within about 10 minutes).
 22388 owner
+2 owner
