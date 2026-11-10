@@ -2019,13 +2019,8 @@ end
 local DELAYS = {
     { "blockGap", "Block Delay", 0, 5000 },
     { "placeWait", "Place Wait", 20, 1000 },
-    { "retryWait", "Retry Wait", 50, 5000 },
-    { "dialogWait", "Dialog Wait", 500, 10000 },
-    { "hopShort", "Short Jump", 20, 2000 },
-    { "hopLong", "Long Jump", 20, 3000 },
-    { "shortDist", "Short Dist", 1, 30 },
-    { "refillWait", "Refill Wait", 20, 3000 },
-    { "refillTimeout", "Timeout", 5, 300 },
+    { "hopShort", "Short Teleport", 20, 2000 },
+    { "hopLong", "Long Teleport", 20, 3000 },
 }
 
 local PAGES = {}
@@ -2039,13 +2034,12 @@ PAGES.home = function()
     note(b, AUTH.msg)
     b[#b + 1] = "add_spacer|small|"
     section(b, "Controls")
-    btn(b, "act_start", "`2Start Building")
+    btn(b, "act_start", "`3Start Building")
     btn(b, "act_pause", "`6Pause")
-    btn(b, "act_resume", "`2Resume")
+    btn(b, "act_resume", "`6Resume")
     btn(b, "act_cancel", "`4Cancel")
     section(b, "Menus")
-    btn(b, "go_build", "`bSetup & Link")
-    btn(b, "go_blocks", "`bRefill")
+    btn(b, "go_build", "`bArt Setup")
     btn(b, "go_speed", "`bDelays")
     btn(b, "go_tut", "`eHelp")
     showPage(b, "home")
@@ -2061,7 +2055,7 @@ PAGES.build = function()
     section(b, "Position")
     btn(b, "act_mid", "`bSet Middle Here")
     btn(b, "act_test", "`6Test Block")
-    section(b, "Flight")
+    section(b, "ModFly")
     chk(b, "art_fly", "Modfly", ART.modfly)
     b[#b + 1] = "add_spacer|small|"
     btn(b, "go_home", "`4Back")
