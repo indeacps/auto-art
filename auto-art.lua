@@ -1427,14 +1427,14 @@ local function ensureReach(x, y, dir)
             if sx >= 0 and sy >= 0
                 and not (sx == x and sy == y)
                 and math.max(math.abs(dx), math.abs(dy)) <= 3 then
-                local fg = fgAt(sx, sy)
-                if fg == nil or fg == 0 then
-                    local distance = 0
-                    if px and py then
-                        distance = math.max(math.abs(sx - px), math.abs(sy - py))
-                    end
-                    cands[#cands + 1] = { x = sx, y = sy, distance = distance }
+                -- Do not reject occupied tiles here. The same movement mode
+                -- used for the initial approach can pass through Kraken blocks.
+                -- Let walkTo() attempt the position and verify the resulting range.
+                local distance = 0
+                if px and py then
+                    distance = math.max(math.abs(sx - px), math.abs(sy - py))
                 end
+                cands[#cands + 1] = { x = sx, y = sy, distance = distance }
             end
         end
     end
